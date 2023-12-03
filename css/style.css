@@ -1,0 +1,43 @@
+body {
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: #f9e5e6;
+    max-width: 50rem;
+    margin: auto
+}
+
+
+
+h2 {
+    margin: 0;
+}
+
+
+button {
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #ff3b30;
+    width: 7rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 6px;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 4rem;
+}
+
+img {
+    width: 100%;
+}

@@ -1,0 +1,63 @@
+<!-- Group 5 : Thomas Le Bonnec, Paul Mairesse -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Canadian Cities</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Canadian Cities</h1>
+
+        <div id="buttons">
+            <button @click="move(-1)">Previous</button>
+            <button @click="move(1)">Next</button>
+        </div>
+
+        <div class="card">
+            <h2 v-text="cities[index].title"></h2>
+            <p v-text="cities[index].desc"></p>
+            <img :src="cities[index].img" alt="City Image">
+        </div>
+    </div>
+
+    <footer class="card">
+        <h2>Group 5</h2>
+        <p>Thomas Le Bonnec</p>
+        <p>Paul Mairesse</p>
+    </footer>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="data/data.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    cities,
+                    isTitleView: true,
+                    index: 0,
+                    citiesCount: 2
+                };
+            },
+            methods: {
+                toggleView() {
+                    this.isTitleView = !this.isTitleView;
+                },
+                move(change) {
+                    if (this.cities[this.index + change]) {
+                        this.index += change;
+                    }
+                },
+            },
+        });
+
+        app.mount("#app");
+    </script>
+</body>
+
+</html>
