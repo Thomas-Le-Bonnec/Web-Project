@@ -15,13 +15,14 @@
         <h1>Canadian Cities</h1>
 
         <div id="buttons">
+            <button @click="toggleView()">{{ switchModeButtonLabel() }}</button>
             <button @click="move(-1)">Previous</button>
             <button @click="move(1)">Next</button>
         </div>
 
         <div class="card">
-            <h2 v-text="cities[index].title"></h2>
-            <p v-text="cities[index].desc"></p>
+            <h2 v-text="isTitleView ? cities[index].title : 'Description'"></h2>
+            <p v-if="!isTitleView" v-text="cities[index].desc"></p>
             <img :src="cities[index].img" alt="City Image">
         </div>
     </div>
@@ -53,6 +54,13 @@
                         this.index += change;
                     }
                 },
+                switchModeButtonLabel() {
+                    if (this.isTitleView) {
+                        return "Show Description";
+                    } else {
+                        return "Show Title";
+                    }
+                }
             },
         });
 
