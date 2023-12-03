@@ -1,11 +1,14 @@
-body {
+html {
     font-family: Avenir, Arial, Helvetica, sans-serif;
     font-size: 16px;
     background-color: #f9e5e6;
+}
+
+
+body {
     max-width: 50rem;
     margin: auto
 }
-
 
 
 h2 {
